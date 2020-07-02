@@ -43,9 +43,14 @@ class InstagramBot:
 			self.nav_user(user)
 	
 if __name__ == '__main__':
-	ig_bot = InstagramBot('', '')
+	with open('userpass.txt', 'r') as f:
+		username = f.readline()
+		password = f.readline()
+	print("\nLogging in with username: " + username)
+	print("and password: " + password[0] + "*****" + password[-2] + '\n')
+	ig_bot = InstagramBot(username, password)
 
 	time.sleep(5)
-	ig_bot.nav_user('garyvee')
+	ig_bot.nav_user('javal_group')
 
 	
